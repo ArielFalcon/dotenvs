@@ -151,8 +151,11 @@ sync-zsh() {
 
     # Navegar a la carpeta del repositorio y hacer commit
     cd ~/.config && \
+    git pull && \
+    echo "Pull de repositorio remoto"
     git add .zshrc && \
     git commit -am 'updated .zshrc' && \
+    git push && \
     echo "Cambios guardados en Git."
 }
 
