@@ -1,4 +1,5 @@
-# 🌌 Dotenvs: Mi Configuración Personal (MacOS)
+# 🌌 Dotenvs: Mi Configuración Personal 
+>  MacOS
 
 ¡Bienvenido a mi repositorio de configuración personal! Este proyecto incluye mis configuraciones personalizadas para varias herramientas que utilizo en mi flujo de trabajo.
 
@@ -28,7 +29,7 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    ```bash
    git clone https://github.com/tu-usuario/dotenvs.git ~/.config/
    ```
-   #Extrae la carpeta creada a .config
+   > **Importante:** Coloca la carpeta creada en ~/.config
 
 2. **Instala OMF**:
 
@@ -51,7 +52,22 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
+   
+4. **Configura P10k**:
 
+   Copia tu archivo `.p10k.zsh` y asegúrate de que Power Level 10k esté instalado:
+
+   ```bash
+   cp ~/.config/.zshrc ~/.zshrc
+   ```
+
+   Si aún no tienes P10k instalado, puedes hacerlo con:
+
+   ```bash
+   brew install powerlevel10k
+   ```
+   > **Importante:** Asegurate de tener homebrew instalado primero
+   
 ## 🎨 Estilo Personalizado
 
 Cada una de mis configuraciones incluye ajustes de estilo y funcionalidad para hacer que mi entorno de desarrollo sea más agradable y productivo.
