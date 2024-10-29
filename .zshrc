@@ -164,7 +164,7 @@ sync-zsh() {
     echo "Pull de repositorio remoto"
     git add .zshrc && \
     git add .p10k.zsh && \
-    git commit -am 'updated .zshrc' && \
+    git commit -am 'updated config' && \
     git push && \
     echo "Cambios guardados en Git."
 }
