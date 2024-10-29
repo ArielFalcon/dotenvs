@@ -58,7 +58,7 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    Copia tu archivo `.p10k.zsh` y asegúrate de que Power Level 10k esté instalado:
 
    ```bash
-   cp ~/.config/.zshrc ~/.zshrc
+   cp ~/.config/.p10k.zsh ~/.p10k.zsh
    ```
 
    Si aún no tienes P10k instalado, puedes hacerlo con:
@@ -75,6 +75,7 @@ Cada una de mis configuraciones incluye ajustes de estilo y funcionalidad para h
 ### Temas y Colores
 
 - Utilizo temas personalizados para Neovim y Fish, que puedes encontrar en el directorio correspondiente.
+> **Nvim**: Puedes estando dentro del programa pulsar ```SPACE u SHIFT+C``` para desplegar el menu visual de selección de estilos preinstlados. 
 
 ### Atajos de Teclado
 
