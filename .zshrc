@@ -150,17 +150,20 @@ mark() {
   echo "Alias '$name' creado para el directorio '$dir'."
 }
 
-# Función para actualizar la configuración de .zshrc
+# Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
 sync-zsh() {
     # Copiar .zshrc a ~/.config/
     cp ~/.zshrc ~/.config/.zshrc && \
     echo "Archivo .zshrc copiado a ~/.config/."
+    cp ~/.p10k.zsh ~/.config/.p10k.zsh && \
+    echo "Archivo .p10k.zsh copiado a ~/.config/."
 
     # Navegar a la carpeta del repositorio y hacer commit
     cd ~/.config && \
     git pull && \
     echo "Pull de repositorio remoto"
     git add .zshrc && \
+    git add .p10k.zsh && \
     git commit -am 'updated .zshrc' && \
     git push && \
     echo "Cambios guardados en Git."
