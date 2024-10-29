@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z dircycle)
+plugins=(git z dircycle zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -142,4 +142,20 @@ mark() {
 
   echo "Alias '$name' creado para el directorio '$dir'."
 }
+
+# Función para actualizar la configuración de .zshrc
+sync-zsh() {
+    # Copiar .zshrc a ~/.config/
+    cp ~/.zshrc ~/.config/.zshrc && \
+    echo "Archivo .zshrc copiado a ~/.config/."
+
+    # Navegar a la carpeta del repositorio y hacer commit
+    cd ~/.config && \
+    git add .zshrc && \
+    git commit -am 'updated .zshrc' && \
+    echo "Cambios guardados en Git."
+}
+
+# Alias creados automaticamente
 alias ont='cd /Users/arielyumn/Desktop/TRABAJO/ont-frontend'
+alias config='cd /Users/arielyumn/.config'
