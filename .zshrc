@@ -170,8 +170,9 @@ sync-zsh() {
 }
 
 # Alias creados automaticamente
-alias ont='cd /Users/arielyumn/Desktop/TRABAJO/ont-frontend'
-alias config='cd /Users/arielyumn/.config'
+alias ont='/Users/arielyumn/Desktop/TRABAJO/ont-frontend/src/main/web/'
+alias config='/Users/arielyumn/.config'
+alias config-nvim='nvim /Users/arielyumn/.config/nvim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
