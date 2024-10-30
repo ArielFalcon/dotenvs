@@ -32,6 +32,7 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    > **Importante:** Coloca la carpeta creada en ~/.config
 
 2. **Instala OMF**:
+   > **Opcional**: Si quieres trabajar con fish
 
    Si aún no tienes OMF instalado, puedes instalarlo ejecutando:
 
@@ -39,7 +40,7 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    curl -L https://get.oh-my.fish | fish
    ```
 
-3. **Configura Zsh**:
+4. **Configura Zsh**:
 
    Copia tu archivo `.zshrc` y asegúrate de que Oh My Zsh esté instalado:
 
@@ -52,8 +53,21 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
+
+   **Instala los pluggins de OMZ para autocompletado y errores de sintaxis**
    
-4. **Configura P10k**:
+   zhs-autosuggestions
+   ```bash
+   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
+
+   zsh-syntax-highlighting
+   ```bash
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+   
+   
+6. **Configura P10k**:
 
    Copia tu archivo `.p10k.zsh` y asegúrate de que Power Level 10k esté instalado:
 
@@ -67,6 +81,19 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    brew install powerlevel10k
    ```
    > **Importante:** Asegurate de tener homebrew instalado primero
+
+   Instala el tema de p10k para zsh
+   ```bash
+   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+   ```
+   
+8. **Sincroniza tu archivo de ssh con las actualizaciones**:
+   
+   ZSH
+   ```bash
+   source ~/.zshrc
+   ```
+
    
 ## 🎨 Estilo Personalizado
 
