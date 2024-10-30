@@ -170,7 +170,7 @@ sync-zsh() {
 }
 
 # Alias creados automaticamente
-alias ont='/Users/arielyumn/Desktop/TRABAJO/ont-frontend/src/main/web/'
+alias ont='/Users/arielyumn/Desktop/TRABAJO/ont-frontend/src/main/web'
 alias config='/Users/arielyumn/.config'
 alias config-nvim='nvim /Users/arielyumn/.config/nvim'
 
