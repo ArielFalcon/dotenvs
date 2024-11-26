@@ -155,7 +155,7 @@ mark() {
 }
 
 # Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
-sync-zsh() {
+upd-zsh() {
     # Copiar .zshrc a ~/.config/
     cp ~/.zshrc ~/.config/.zshrc && \
     echo "Archivo .zshrc copiado a ~/.config/."
@@ -171,6 +171,14 @@ sync-zsh() {
     git commit -am 'updated config' && \
     git push && \
     echo "Cambios guardados en Git."
+}
+
+sync-zsh() {
+    # Actualizar .zshrc y .p10k.zsh
+    cp ~/.config/.zshrc ~/.zshrc && \
+      echo "Archivo .zshrc actualizado."
+    cp ~/.config/.p10k.zsh ~/.p10k.zsh && \
+      echo "Archivo .p10k.zsh actualizado."
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
