@@ -95,6 +95,10 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='nvim'
 # fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Cargar nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Cargar auto-completado de nvm
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -122,7 +126,7 @@ autoload -Uz add-zsh-hook
 add-zsh-hook chpwd nvm_auto_use
 
 alias abvpn= "sudo openconnect --os=win --usergroup=gateway --protocol=gp arng.agbar.net -s 'vpn-slice srvlrabdes01 srvlrabint01 srvlrabint02 srvlrabpro01 srvlrabpro02 srvelabpro01 srvwshostint01 srvwshostint02 srvwshostint03 srvwshostpro01 algol.agbar.local algolint.agbar.local algolcmint.agbar.local cmint.agbar.local gitlab.agbar.net sicabd.agbar.local sicabp.agbar.local mdmwebdes-back.aiguesdebarcelona.cat webtelelecturapre-back.aiguesdebarcelona.cat webtelelectura-back.aiguesdebarcelona.cat webtelelecturapre.aiguesdebarcelona.cat srvlrabdes01.agbar.ga.local srvlrabint01.agbar.ga.local srvabappfusei01 demowebclient-dev.aiguesdebarcelona.cat identity-dev.aiguesdebarcelona.cat identity-pre.aiguesdebarcelona.cat identity.aiguesdebarcelona.cat identity-backoffice-dev.aiguesdebarcelona.cat apipre.aiguesdebarcelona.cat dniepre.aiguesdebarcelona.cat abchatbotcat.aiguesdebarcelona.cat abchatbotesp.aiguesdebarcelona.cat redisabdev.redis.cache.windows.net redisabpre.redis.cache.windows.net redisabpro.redis.cache.windows.net jira.aiguesdebarcelona.cat srvlimsappsop01 srvwshostdes02 portuno.agbar.net nexus.agbar.net SRVSICABAPPD01 sigab.aiguesdebarcelona.cat suez-apim-dev.agbar.net tokenizador-des.aiguesdebarcelona.cat tokenizador-pre.aiguesdebarcelona.cat tokenizador.aiguesdebarcelona.cat srvsicabappi01 contigut-estatic.aiguesdebarcelona.cat jenkins.agbar.net acrabsdevaks.azurecr.io sicabem-des.aiguesdebarcelona.cat sicabem-int.aiguesdebarcelona.cat sicabem.aiguesdebarcelona.cat msrv-sequera-des.aiguesdebarcelona.cat msrv-sequera-pre.aiguesdebarcelona.cat msrv-sequera.aiguesdebarcelona.cat guiaestilsweb-des.aiguesdebarcelona.cat guiaestilsweb-pre.aiguesdebarcelona.cat guiaestilsweb.aiguesdebarcelona.cat sapabd.agbar.ga.local sapabr.agbar.ga.local'"
-proj() {
+work() {
   cd ~/Desktop/TRABAJO/ && ls
 }
 
@@ -169,9 +173,10 @@ sync-zsh() {
     echo "Cambios guardados en Git."
 }
 
-# Alias creados automaticamente
-alias ont='cd /Users/arielyumn/Desktop/TRABAJO/ont-frontend'
-alias config='cd /Users/arielyumn/.config'
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Alias creados automaticamente
+alias ont='cd /Users/arielyumn/Desktop/TRABAJO/ont-frontend/src/main/web'
+alias config='cd /Users/arielyumn/.config'
+
