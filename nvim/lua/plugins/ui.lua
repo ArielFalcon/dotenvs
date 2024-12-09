@@ -58,7 +58,7 @@ return {
         lualine_a = {
           {
             "mode",
-            icon = "󱗞",
+            icon = "🐓",
           },
         },
       },
