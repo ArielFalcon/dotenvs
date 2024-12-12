@@ -63,6 +63,7 @@ return {
   { "rose-pine/neovim", name = "rose-pine" },
   { "nyoom-engineering/oxocarbon.nvim", name = "oxocarbon" },
   { "rktjmp/lush.nvim", dependencies = { "mcchrish/zenbones.nvim" } },
+  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,

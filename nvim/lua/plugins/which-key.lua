@@ -12,6 +12,5 @@ return {
         require("which-key").show({ global = false })
       end,
     },
-    { "<leader>o", group = "Obsidian" },
   },
 }
