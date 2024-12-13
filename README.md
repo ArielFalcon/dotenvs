@@ -25,7 +25,6 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
 ### Pasos para Instalar
 
 1. **Clona este repositorio**:
-
    ```bash
    git clone https://github.com/tu-usuario/dotenvs.git ~/.config/
    ```
@@ -35,13 +34,11 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    > **Opcional**: Si quieres trabajar con fish
 
    Si aún no tienes OMF instalado, puedes instalarlo ejecutando:
-
    ```bash
    curl -L https://get.oh-my.fish | fish
    ```
 
 3. **Instala dependencias adicionales**
-
       ```bash
    brew install fzf fd ripgrep bat exa git gcc curl lazygit jq bash
    ```
@@ -49,13 +46,11 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
 4. **Configura Zsh**:
 
    Copia tu archivo `.zshrc` y asegúrate de que Oh My Zsh esté instalado:
-
    ```bash
    cp ~/.config/.zshrc ~/.zshrc
    ```
 
    Si aún no tienes Oh My Zsh instalado, puedes hacerlo con:
-
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
@@ -76,24 +71,43 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
 6. **Configura P10k**:
 
    Copia tu archivo `.p10k.zsh` y asegúrate de que Power Level 10k esté instalado:
-
    ```bash
    cp ~/.config/.p10k.zsh ~/.p10k.zsh
    ```
 
    Si aún no tienes P10k instalado, puedes hacerlo con:
-
    ```bash
    brew install powerlevel10k
    ```
    > **Importante:** Asegurate de tener homebrew instalado primero
 
-   Instala el tema de p10k para zsh
+   Instala el tema de p10k para zsh:
    ```bash
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
    ```
+7. **Configura Zellij**
+   1. Primero instala `RUSTUP` (herramientas que utilizan algunas dependencias de los plugins):
+   ```bash
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
+   > **Importante:** En el menú de instalación selecciona la opción 1 (configuración por defecto)
    
-7. **Sincroniza tu archivo de ssh con las actualizaciones**:
+   2. Asegurate de que el archivo de **CARGO** esté en tu `PATH`:
+   ``` bash
+   source $HOME/.cargo/env
+   ```
+   3. Verifica la instalación
+   ``` bash
+   rustc --version
+   cargo --version
+   ```
+
+   **`ZELLIJ`**
+   ``` bash
+   cargo install zellij
+   ```
+  
+9. **Sincroniza tu archivo de zsh con las actualizaciones**:
    
    ZSH
    ```bash
