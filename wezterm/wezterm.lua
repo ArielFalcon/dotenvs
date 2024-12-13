@@ -30,6 +30,13 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
+
 -- This is where you actually apply your config choices
 config.window_decorations = "RESIZE" -- removes window title bar
 config.force_reverse_video_cursor = true
