@@ -18,7 +18,6 @@ eval "$($BREW_BIN/brew shellenv)"
 WM_VAR="ZELLIJ"
 WM_CMD="zellij"
 
-
 function start_if_needed() {
     if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
         exec $WM_CMD
@@ -183,4 +182,5 @@ eval "$(atuin init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+echo "Zsh updated."
 start_if_needed
