@@ -130,11 +130,6 @@ work() {
   cd ~/Desktop/TRABAJO/ && ls
 }
 
-# Configurar Carapace
-export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
-
 mark() {
   local name=$1
   local dir=$(pwd)
@@ -193,6 +188,5 @@ sync-zsh() {
 alias ont='cd /Users/arielyumn/Desktop/TRABAJO/ont-frontend/src/main/web'
 alias config='cd /Users/arielyumn/.config'
 
-autoload -Uz compinit && compinit
-eval "$(atuin init zsh)"
-eval "$(zoxide init zsh)"
+alias desk='cd /Users/arielyumn/Desktop'
+alias desk='cd /Users/arielyumn/Desktop'
