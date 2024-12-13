@@ -40,6 +40,12 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    curl -L https://get.oh-my.fish | fish
    ```
 
+3. **Instala dependencias adicionales**
+
+      ```bash
+   brew install fzf fd ripgrep bat exa git gcc curl lazygit jq bash
+   ```
+
 4. **Configura Zsh**:
 
    Copia tu archivo `.zshrc` y asegúrate de que Oh My Zsh esté instalado:
@@ -54,7 +60,7 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
-   **Instala los pluggins de OMZ para autocompletado y errores de sintaxis**
+5. **Instala los pluggins de OMZ para autocompletado y errores de sintaxis**
    
    zhs-autosuggestions
    ```bash
@@ -87,7 +93,7 @@ Asegúrate de tener instalados los siguientes programas antes de proceder:
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
    ```
    
-8. **Sincroniza tu archivo de ssh con las actualizaciones**:
+7. **Sincroniza tu archivo de ssh con las actualizaciones**:
    
    ZSH
    ```bash
