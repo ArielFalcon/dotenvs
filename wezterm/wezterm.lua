@@ -5,22 +5,22 @@ local wezterm = require("wezterm")
 local config = {
 	force_reverse_video_cursor = true,
 	colors = {
-		foreground = "#dcd7ba",
-		background = "#181616",
+		foreground = "#ebdbb2",
+		background = "#282828",
 
-		cursor_bg = "#c8c093",
-		cursor_fg = "#c8c093",
-		cursor_border = "#c8c093",
+		cursor_bg = "#fe8019",
+		cursor_fg = "#282828",
+		cursor_border = "#fe8019",
 
-		selection_fg = "#c8c093",
-		selection_bg = "#2d4f67",
+		selection_fg = "#ebdbb2",
+		selection_bg = "#458588",
 
-		scrollbar_thumb = "#16161d",
-		split = "#16161d",
+		scrollbar_thumb = "#504945",
+		split = "#504945",
 
-		ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
-		brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
-		indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+		ansi = { "#282828", "#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#a89984" },
+		brights = { "#928374", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c", "#ebdbb2" },
+		indexed = { [16] = "#d65d0e", [17] = "#d3869b" },
 	},
 }
 
@@ -41,18 +41,18 @@ config.window_padding = {
 config.window_decorations = "RESIZE" -- removes window title bar
 config.force_reverse_video_cursor = true
 config.colors = {}
-config.colors.foreground = "#dcd7ba"
-config.colors.background = "#181616"
-config.colors.cursor_bg = "#ffa011"
-config.colors.cursor_fg = "#ffa011"
-config.colors.cursor_border = "#c8c093"
-config.colors.selection_fg = "#c8c093"
-config.colors.selection_bg = "#2d4f67"
-config.colors.scrollbar_thumb = "#16161d"
-config.colors.split = "#16161d"
-config.colors.ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" }
-config.colors.brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" }
-config.colors.indexed = { [16] = "#ffa066", [17] = "#ff5d62" }
+config.colors.foreground = "#ebdbb2"
+config.colors.background = "#282828"
+config.colors.cursor_bg = "#fe8019"
+config.colors.cursor_fg = "#282828"
+config.colors.cursor_border = "#fe8019"
+config.colors.selection_fg = "#ebdbb2"
+config.colors.selection_bg = "#458588"
+config.colors.scrollbar_thumb = "#504945"
+config.colors.split = "#504945"
+config.colors.ansi = { "#282828", "#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#a89984" }
+config.colors.brights = { "#928374", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c", "#ebdbb2" }
+config.colors.indexed = { [16] = "#d65d0e", [17] = "#d3869b" }
 --  change
 config.window_background_opacity = 0.95
 config.font = wezterm.font("FiraCode Nerd Font")
