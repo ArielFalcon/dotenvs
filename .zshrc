@@ -15,11 +15,6 @@ BREW_BIN="/opt/homebrew/bin"
 # Usar la variable BREW_BIN donde se necesite
 eval "$($BREW_BIN/brew shellenv)"
 
-source $(dirname $BREW_BIN)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source $(dirname $BREW_BIN)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(dirname $BREW_BIN)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(dirname $BREW_BIN)/share/powerlevel10k/powerlevel10k.zsh-theme
-
 WM_VAR="ZELLIJ"
 WM_CMD="zellij"
 
@@ -148,21 +143,6 @@ alias abvpn= "sudo openconnect --os=win --usergroup=gateway --protocol=gp arng.a
 
 work() {
   cd ~/Desktop/TRABAJO/ && ls
-}
-
-  # Verifica si el alias ya existe
-  if alias "$name" &> /dev/null; then
-    echo "El alias '$name' ya existe y apunta a: $(alias "$name" | sed "s/alias $name='//;s/'//")"
-    return 0
-  fi
-
-  # Agrega el alias al final de ~/.zshrc
-  echo "alias $name='cd $dir'" >> ~/.zshrc
-
-  # Recarga ~/.zshrc para que el alias esté disponible de inmediato
-  source ~/.zshrc
-
-  echo "Alias '$name' creado para el directorio '$dir'."
 }
 
 # Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
