@@ -11,6 +11,25 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+BREW_BIN="/opt/homebrew/bin"
+# Usar la variable BREW_BIN donde se necesite
+eval "$($BREW_BIN/brew shellenv)"
+
+source $(dirname $BREW_BIN)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(dirname $BREW_BIN)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(dirname $BREW_BIN)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(dirname $BREW_BIN)/share/powerlevel10k/powerlevel10k.zsh-theme
+
+WM_VAR="ZELLIJ"
+WM_CMD="zellij"
+
+
+function start_if_needed() {
+    if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
+        exec $WM_CMD
+    fi
+}
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -77,7 +96,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z dircycle zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git z dircycle zsh-autosuggestions zsh-syntax-highlighting command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,18 +145,10 @@ autoload -Uz add-zsh-hook
 add-zsh-hook chpwd nvm_auto_use
 
 alias abvpn= "sudo openconnect --os=win --usergroup=gateway --protocol=gp arng.agbar.net -s 'vpn-slice srvlrabdes01 srvlrabint01 srvlrabint02 srvlrabpro01 srvlrabpro02 srvelabpro01 srvwshostint01 srvwshostint02 srvwshostint03 srvwshostpro01 algol.agbar.local algolint.agbar.local algolcmint.agbar.local cmint.agbar.local gitlab.agbar.net sicabd.agbar.local sicabp.agbar.local mdmwebdes-back.aiguesdebarcelona.cat webtelelecturapre-back.aiguesdebarcelona.cat webtelelectura-back.aiguesdebarcelona.cat webtelelecturapre.aiguesdebarcelona.cat srvlrabdes01.agbar.ga.local srvlrabint01.agbar.ga.local srvabappfusei01 demowebclient-dev.aiguesdebarcelona.cat identity-dev.aiguesdebarcelona.cat identity-pre.aiguesdebarcelona.cat identity.aiguesdebarcelona.cat identity-backoffice-dev.aiguesdebarcelona.cat apipre.aiguesdebarcelona.cat dniepre.aiguesdebarcelona.cat abchatbotcat.aiguesdebarcelona.cat abchatbotesp.aiguesdebarcelona.cat redisabdev.redis.cache.windows.net redisabpre.redis.cache.windows.net redisabpro.redis.cache.windows.net jira.aiguesdebarcelona.cat srvlimsappsop01 srvwshostdes02 portuno.agbar.net nexus.agbar.net SRVSICABAPPD01 sigab.aiguesdebarcelona.cat suez-apim-dev.agbar.net tokenizador-des.aiguesdebarcelona.cat tokenizador-pre.aiguesdebarcelona.cat tokenizador.aiguesdebarcelona.cat srvsicabappi01 contigut-estatic.aiguesdebarcelona.cat jenkins.agbar.net acrabsdevaks.azurecr.io sicabem-des.aiguesdebarcelona.cat sicabem-int.aiguesdebarcelona.cat sicabem.aiguesdebarcelona.cat msrv-sequera-des.aiguesdebarcelona.cat msrv-sequera-pre.aiguesdebarcelona.cat msrv-sequera.aiguesdebarcelona.cat guiaestilsweb-des.aiguesdebarcelona.cat guiaestilsweb-pre.aiguesdebarcelona.cat guiaestilsweb.aiguesdebarcelona.cat sapabd.agbar.ga.local sapabr.agbar.ga.local'"
+
 work() {
   cd ~/Desktop/TRABAJO/ && ls
 }
-
-mark() {
-  local name=$1
-  local dir=$(pwd)
-  
-  if [ -z "$name" ]; then
-    echo "Error: Debes proporcionar un nombre para el alias."
-    return 1
-  fi
 
   # Verifica si el alias ya existe
   if alias "$name" &> /dev/null; then
@@ -181,12 +192,15 @@ sync-zsh() {
       echo "Archivo .p10k.zsh actualizado."
 }
 
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Alias creados automaticamente
-alias ont='cd /Users/arielyumn/Desktop/TRABAJO/ont-frontend/src/main/web'
-alias config='cd /Users/arielyumn/.config'
-
-alias desk='cd /Users/arielyumn/Desktop'
-alias desk='cd /Users/arielyumn/Desktop'
+start_if_needed
