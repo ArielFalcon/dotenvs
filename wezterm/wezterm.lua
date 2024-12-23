@@ -3,7 +3,6 @@ local wezterm = require("wezterm")
 
 -- This table will hold the configuration.
 local config = {
-	force_reverse_video_cursor = true,
 	colors = {
 		foreground = "#ebdbb2",
 		background = "#282828",
