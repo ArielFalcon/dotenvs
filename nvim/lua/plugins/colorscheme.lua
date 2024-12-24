@@ -63,7 +63,39 @@ return {
   { "rose-pine/neovim", name = "rose-pine" },
   { "nyoom-engineering/oxocarbon.nvim", name = "oxocarbon" },
   { "rktjmp/lush.nvim", dependencies = { "mcchrish/zenbones.nvim" } },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({
+        transparent_mode = true, -- Activar fondo transparente
+        contrast = "hard", -- Contraste "hard" como en Everforest
+        overrides = {
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          FloatTitle = { bg = "none" },
+
+          NormalDark = { fg = "#928374", bg = "#282828" },
+
+          LazyNormal = { bg = "#32302f", fg = "#d4be98" },
+          MasonNormal = { bg = "#32302f", fg = "#d4be98" },
+
+          TelescopeTitle = { fg = "#fabd2f", bold = true },
+          TelescopePromptNormal = { bg = "#3c3836" },
+          TelescopePromptBorder = { fg = "#3c3836", bg = "#3c3836" },
+          TelescopeResultsNormal = { fg = "#d4be98", bg = "#282828" },
+          TelescopeResultsBorder = { fg = "#282828", bg = "#282828" },
+          TelescopePreviewNormal = { bg = "#3c3836" },
+          TelescopePreviewBorder = { bg = "#3c3836", fg = "#3c3836" },
+
+          Pmenu = { fg = "#d4be98", bg = "#3c3836" },
+          PmenuSel = { fg = "NONE", bg = "#504945" },
+          PmenuSbar = { bg = "#3c3836" },
+          PmenuThumb = { bg = "#504945" },
+        },
+      })
+    end,
+  },
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
@@ -104,7 +136,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- change this line to change the color scheme
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "gruvbox",
     },
   },
 }

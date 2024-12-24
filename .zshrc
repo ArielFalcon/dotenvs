@@ -15,9 +15,6 @@ BREW_BIN="/opt/homebrew/bin"
 # Usar la variable BREW_BIN donde se necesite
 eval "$($BREW_BIN/brew shellenv)"
 
-WM_VAR="ZELLIJ"
-WM_CMD="zellij"
-
 function start_if_needed() {
     if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
         exec $WM_CMD
