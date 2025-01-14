@@ -62,6 +62,7 @@ return {
       },
     },
   },
+<<<<<<< HEAD
   {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -91,6 +92,8 @@ return {
       })
     end,
   },
+=======
+>>>>>>> 3d2532b02a9cd0d40d04baf36ae7a3de317c495b
   {
     "dinhhuy258/git.nvim",
     event = "BufReadPre",
