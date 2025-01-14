@@ -145,7 +145,7 @@ work() {
 }
 
 # Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
-upd-zsh() {
+push-zsh() {
     # Copiar .zshrc a ~/.config/
     cp ~/.zshrc ~/.config/.zshrc && \
     echo "Archivo .zshrc copiado a ~/.config/."
@@ -163,6 +163,18 @@ upd-zsh() {
     echo "Cambios guardados en Git."
 }
 
+pull-zsh() {
+    # Navegar a la carpeta del repositorio y hacer pull
+    cd ~/.config && \
+    git pull && \
+    echo "Pull de repositorio remoto"
+    cp .zshrc ~/.zshrc && \
+    echo "Archivo .zshrc actualizado."
+    cp .p10k.zsh ~/.p10k.zsh && \
+    echo "Archivo .p10k.zsh actualizado."
+}
+
+# Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
 sync-zsh() {
     # Actualizar .zshrc y .p10k.zsh
     cp ~/.config/.zshrc ~/.zshrc && \

@@ -62,7 +62,35 @@ return {
       },
     },
   },
-
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        size = 20, -- Tamaño por defecto para terminales horizontales
+        open_mapping = [[<leader>t]], -- Mapeo para abrir/cerrar la terminal
+        hide_numbers = true, -- Oculta números de línea
+        shade_filetypes = {},
+        shade_terminals = true,
+        shading_factor = 2,
+        start_in_insert = true,
+        insert_mappings = true, -- Permite usar los mappings en modo insert
+        terminal_mappings = true, -- Habilita mappings específicos para terminal
+        persist_size = true,
+        direction = "float", -- Usa una terminal flotante
+        close_on_exit = true, -- Cierra la terminal al salir
+        shell = vim.o.shell, -- Usa el shell por defecto del sistema
+        float_opts = {
+          border = "curved", -- Bordes de la ventana flotante
+          winblend = 3, -- Transparencia de la ventana
+          highlights = {
+            border = "Normal",
+            background = "Normal",
+          },
+        },
+      })
+    end,
+  },
   {
     "dinhhuy258/git.nvim",
     event = "BufReadPre",
@@ -75,6 +103,7 @@ return {
       },
     },
   },
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
   {
     "nvim-telescope/telescope.nvim",
     opts = function(_, opts)
