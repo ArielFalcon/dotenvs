@@ -146,25 +146,23 @@ work() {
 
 # Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
 push-zsh() {
-    # Copiar .zshrc a ~/.config/
     cp ~/.zshrc ~/.config/.zshrc && \
     echo "Archivo .zshrc copiado a ~/.config/."
     cp ~/.p10k.zsh ~/.config/.p10k.zsh && \
     echo "Archivo .p10k.zsh copiado a ~/.config/."
+    cp ~/.tmux.conf ~/.config/.tmux.conf && \
+    echo "Archivo .tmux.conf copiado a ~/.config/."
 
-    # Navegar a la carpeta del repositorio y hacer commit
     cd ~/.config && \
     git pull && \
     echo "Pull de repositorio remoto"
-    git add .zshrc && \
-    git add .p10k.zsh && \
+    git add .zshrc .p10k.zsh .tmux.conf nvim/ && \
     git commit -am 'updated config' && \
     git push && \
     echo "Cambios guardados en Git."
 }
 
 pull-zsh() {
-    # Navegar a la carpeta del repositorio y hacer pull
     cd ~/.config && \
     git pull && \
     echo "Pull de repositorio remoto"
@@ -172,6 +170,9 @@ pull-zsh() {
     echo "Archivo .zshrc actualizado."
     cp .p10k.zsh ~/.p10k.zsh && \
     echo "Archivo .p10k.zsh actualizado."
+    cp .tmux.conf ~/.tmux.conf && \
+    echo "Archivo .tmux.conf actualizado."
+    echo "nvim actualizado (vive en ~/.config/nvim directamente)."
 }
 
 # Función para sincronizar con repositorio la configuración de .zshrc y .p10k.zsh
