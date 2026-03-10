@@ -184,6 +184,7 @@ sync-zsh() {
 }
 
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+export CAPACITOR_ANDROID_STUDIO_PATH="$HOME/Applications/Android Studio.app"
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 

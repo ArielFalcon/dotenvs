@@ -7,18 +7,18 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- add symbols-outline
+  -- add outline
   {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
+    "hedyhli/outline.nvim",
+    cmd = "Outline",
+    keys = { { "<leader>cs", "<cmd>Outline<cr>", desc = "Toggle Outline" } },
+    opts = {},
   },
 
   -- remove inlay_hints from default
   {
     "neovim/nvim-lspconfig",
-    events = "VeryLazy",
+    event = "VeryLazy",
     opts = {
       inlay_hints = { enabled = false },
       servers = {
@@ -29,5 +29,8 @@ return {
         },
       },
     },
+  },
+  {
+    "wuelnerdotexe/vim-astro",
   },
 }

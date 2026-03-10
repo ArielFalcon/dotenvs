@@ -55,18 +55,17 @@ vim.keymap.set("n", "<C-M-l>", function()
   harpoon:list():select(4)
 end)
 
--- Disable key mappings in insert mode
-vim.api.nvim_set_keymap("i", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-k>", "<Nop>", { noremap = true, silent = true })
-
--- Disable key mappings in normal mode
-vim.api.nvim_set_keymap("n", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<Nop>", { noremap = true, silent = true })
-
--- Disable key mappings in visual block mode
-vim.api.nvim_set_keymap("x", "<A-j>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "<A-k>", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "J", "<Nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "K", "<Nop>", { noremap = true, silent = true })
+----- Move lines up/down -----
+-- Usa <leader>j / <leader>k para evitar conflictos con macOS Option key
+vim.keymap.set("n", "<leader>j", "<cmd>m .+1<cr>==", { desc = "Move line down", silent = true })
+vim.keymap.set("n", "<leader>k", "<cmd>m .-2<cr>==", { desc = "Move line up", silent = true })
+-- Visual mode (mantiene la seleccion)
+vim.keymap.set("v", "<leader>j", ":m '>+1<cr>gv=gv", { desc = "Move selection down", silent = true })
+vim.keymap.set("v", "<leader>k", ":m '<-2<cr>gv=gv", { desc = "Move selection up", silent = true })
 
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>")
+
+-- Atajo rapido para recent files (equivalente a <leader>fr)
+vim.keymap.set("n", "<leader>r", function()
+  Snacks.picker.recent()
+end, { desc = "Recent files", silent = true })

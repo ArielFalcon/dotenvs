@@ -2,33 +2,32 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
+    lazy = true,
     opts = {
       transparent_background = true,
       flavour = "mocha",
-    },
-    integrations = {
-      cmp = true,
-      gitsigns = true,
-      nvimtree = true,
-      treesitter = true,
-      notify = false,
-      mini = {
-        enabled = true,
-        indentscope_color = "",
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        notify = false,
+        mini = {
+          enabled = true,
+          indentscope_color = "",
+        },
       },
-      -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
   },
   {
     "miikanissi/modus-themes.nvim",
     name = "modus",
-    priority = 1000,
+    lazy = true,
   },
   {
     "rebelot/kanagawa.nvim",
     name = "kanagawa",
-    priority = 1000,
+    lazy = true,
     opts = {
       transparent = true,
       theme = "dragon",
@@ -60,9 +59,9 @@ return {
       end,
     },
   },
-  { "rose-pine/neovim", name = "rose-pine" },
-  { "nyoom-engineering/oxocarbon.nvim", name = "oxocarbon" },
-  { "rktjmp/lush.nvim", dependencies = { "mcchrish/zenbones.nvim" } },
+  { "rose-pine/neovim", name = "rose-pine", lazy = true },
+  { "nyoom-engineering/oxocarbon.nvim", name = "oxocarbon", lazy = true },
+  { "rktjmp/lush.nvim", lazy = true, dependencies = { "mcchrish/zenbones.nvim" } },
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
@@ -98,26 +97,25 @@ return {
   },
   {
     "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
   },
-  { "NTBBloodbath/doom-one.nvim", name = "doom-one" },
-  { "AhmedAbdulrahman/aylin.vim", name = "aylin" },
+  { "NTBBloodbath/doom-one.nvim", name = "doom-one", lazy = true },
+  { "AhmedAbdulrahman/aylin.vim", name = "aylin", lazy = true },
   {
     "xiyaowong/transparent.nvim",
   },
   {
     "ribru17/bamboo.nvim",
-    lazy = false,
+    lazy = true,
   },
   {
     "neanias/everforest-nvim",
     version = false,
-    lazy = false,
+    lazy = true,
     config = function()
       require("everforest").setup({
         background = "hard",
-        italis = true,
+        italics = true,
         -- transparent_background_level = 1,
         diagnostic_text_highlight = true,
         diagnostic_virtual_text = "coloured",
@@ -129,8 +127,7 @@ return {
   },
   {
     "dgox16/oldworld.nvim",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
   },
   {
     "LazyVim/LazyVim",

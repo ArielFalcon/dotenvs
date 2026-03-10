@@ -1,5 +1,3 @@
--- https://github.com/craftzdog/dotfiles-public/blob/master/.config/nvim/lua/plugins/editor.lua
-
 return {
   {
     "rmagatti/goto-preview",
@@ -45,7 +43,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.hipatterns",
+"nvim-mini/mini.hipatterns",
     event = "BufReadPre",
     opts = {
       highlighters = {
@@ -62,7 +60,6 @@ return {
       },
     },
   },
-<<<<<<< HEAD
   {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -92,8 +89,6 @@ return {
       })
     end,
   },
-=======
->>>>>>> 3d2532b02a9cd0d40d04baf36ae7a3de317c495b
   {
     "dinhhuy258/git.nvim",
     event = "BufReadPre",
@@ -106,7 +101,6 @@ return {
       },
     },
   },
-  { "akinsho/toggleterm.nvim", version = "*", config = true },
   {
     "nvim-telescope/telescope.nvim",
     opts = function(_, opts)
@@ -114,7 +108,6 @@ return {
 
       opts.defaults = {
         file_ignore_patterns = {
-
           "node_modules",
           "package-lock.json",
           "yarn.lock",
@@ -123,10 +116,8 @@ return {
         prompt_prefix = "> ", -- Set the prompt to just ">"
         layout_strategy = "horizontal", -- Use horizontal layout
         sorting_strategy = "ascending",
-
         winblend = 0, -- No transparency
         results_title = false, -- Remove the "Results" title
-
         borderchars = {
           prompt = { "─", " ", " ", " ", " ", " ", " ", " " }, -- Top border for the prompt only
           results = { " ", " ", " ", " ", " ", " ", " ", " " }, -- No borders for results
@@ -135,10 +126,8 @@ return {
         mappings = {
           i = {
             ["<C-Down>"] = actions.cycle_history_next,
-
             ["<C-Up>"] = actions.cycle_history_prev,
             ["<C-f>"] = actions.preview_scrolling_down,
-
             ["<C-b>"] = actions.preview_scrolling_up,
           },
           n = {
@@ -147,10 +136,7 @@ return {
         },
       }
 
-      -- Load the fzf extension for fast searches
-      require("telescope").load_extension("fzf")
-
-      -- Add hidden files and no-ignore options to file search and live_grep
+      -- Add hidden files
       opts.pickers = {
         find_files = {
           find_command = { "rg", "--files", "--hidden", "--no-ignore", "--iglob", "!.git/" },
@@ -182,7 +168,6 @@ return {
     },
     config = function(_, opts)
       require("telescope").setup(opts)
-
       vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
     end,
   },

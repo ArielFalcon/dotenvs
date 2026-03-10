@@ -49,7 +49,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy", -- Load this plugin on the 'VeryLazy' event
-    requires = { "nvim-tree/nvim-web-devicons", opt = true }, -- Optional dependency for icons
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       options = {
         theme = "gruvbox", -- Set the theme for lualine
@@ -93,10 +93,10 @@ return {
   },
 
   -- Plugin: mini.nvim
-  -- URL: https://github.com/echasnovski/mini.nvim
+  -- URL: https://github.com/nvim-mini/mini.nvim
   -- Description: A collection of minimal, fast, and modular Lua plugins for Neovim.
   {
-    "echasnovski/mini.nvim",
+"nvim-mini/mini.nvim",
     version = false, -- Use the latest version
     config = function()
       require("mini.animate").setup({
